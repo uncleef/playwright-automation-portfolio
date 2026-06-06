@@ -14,9 +14,10 @@ public class Hooks {
 
     @Before
     public void setup() {
+        boolean headless = Boolean.parseBoolean(System.getenv().getOrDefault("HEADLESS", "false"));
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(false)
+                new BrowserType.LaunchOptions().setHeadless(headless)
         );
         Page page = browser.newPage();
         ScenarioContext.setPage(page);
@@ -25,7 +26,7 @@ public class Hooks {
     @After
     public void teardown() {
         ScenarioContext.clear();
-        browser.close();
-        playwright.close();
+        if (browser != null) browser.close();
+        if (playwright != null) playwright.close();
     }
 }

@@ -29,7 +29,8 @@ public class UploadPage {
     }
 
     public String getFileName() {
-        return Paths.get(selectFileToUpload.inputValue()).getFileName().toString();
+        String fullPath = selectFileToUpload.inputValue();
+        return fullPath.substring(fullPath.lastIndexOf("\\") + 1);
     }
 
     public void uploadFile() {
