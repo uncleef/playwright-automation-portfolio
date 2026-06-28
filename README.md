@@ -1,6 +1,6 @@
 # Playwright Automation Portfolio
 
-![CI](https://github.com/uncleef/playwright-automation-portfolio/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/uncleef/playwright-automation-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/uncleef/playwright-automation-portfolio/actions/workflows/ci.yml)
 
 A test automation framework built with Java 21, Playwright, and Cucumber (BDD) to demonstrate UI and API testing skills.
 
